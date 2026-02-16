@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Birthday Surprise 🎉</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LANDING -->
+<div id="landing" class="page active">
+    <h1>Who are you? 👀</h1>
+
+    <div class="option">
+        <img src="gif1.gif">
+        <button onclick="playPranii()">Pranii</button>
+    </div>
+
+    <div class="option">
+        <img src="gif2.gif">
+        <button onclick="showPage('bhuviPage')">Bhuvi</button>
+    </div>
+
+    <div class="option">
+        <img src="gif3.gif">
+        <button onclick="showPage('someonePage')">Someone Else</button>
+    </div>
+</div>
+
+<!-- PRANII VIDEO PAGE -->
+<div id="praniiPage" class="page">
+    <video id="birthdayVideo" src="vidp.mp4" playsinline controls></video>
+    <br>
+    <button onclick="showPraniiText()">Continue</button>
+</div>
+
+<!-- PRANII TEXT PAGE -->
+<div id="praniiTextPage" class="page">
+    <h1 id="praniiText">1 2 3 4 5 6 7 eh eh eh ehhh 🎵</h1>
+</div>
+
+<!-- PRANII HAPPY PAGE -->
+<div id="happyPraniiPage" class="page">
+    <h1>🎉 Happy Birthday Pranii 🎉</h1>
+    <img src="pranii.jpeg" width="250">
+
+    <button onclick="showCutePranii()">Thank You ❤️</button>
+    <button id="noBtnPranii">No Thanks 😈</button>
+
+    <p id="cuteMsgPranii" class="cuteMsg">
+        awww ik u would say this 🥹❤️
+    </p>
+</div>
+
+<!-- BHUVI PAGE -->
+<div id="bhuviPage" class="page">
+    <h1>NO NO NO 😤</h1>
+    <img src="bh.gif" class="gif">
+    <br>
+    <button onclick="showBhuviBirthday()">Continue</button>
+</div>
+
+<!-- BHUVI HAPPY PAGE -->
+<div id="happyBhuviPage" class="page">
+    <h1>🎉 Happy Birthday Bhuvi 🎉</h1>
+    <img src="bhuvi.jpeg" width="250">
+
+    <button onclick="showCuteBhuvi()">Thank You ❤️</button>
+    <button id="noBtnBhuvi">No Thanks 😈</button>
+
+    <p id="cuteMsgBhuvi" class="cuteMsg">
+        awww ik u would say this 🥹❤️
+    </p>
+</div>
+
+<!-- SOMEONE ELSE PAGE -->
+<div id="someonePage" class="page">
+    <h1>Access Denied 🚫</h1>
+    <img src="as.gif" class="gif">
+    <br>
+    <button onclick="showPage('landing')">Go Back 🔙</button>
+</div>
+
+<audio id="praniiAudio" src="pranii-audio.mpeg"></audio>
+<audio id="bhuviAudio" src="bhuvi-audio.mp3" loop></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
