@@ -7,7 +7,11 @@ function showPage(pageId){
 
 function playPranii(){
   showPage("praniiPage");
-  document.getElementById("birthdayVideo").play();
+
+  const video = document.getElementById("birthdayVideo");
+  video.play().catch(() => {
+      console.log("Autoplay blocked");
+  });
 }
 
 function showPraniiText(){
@@ -36,17 +40,22 @@ function showCuteBhuvi(){
   document.getElementById("cuteMsgBhuvi").style.display = "block";
 }
 
-/* ---------- RUNNING BUTTONS ---------- */
+/* ---------- RUNNING BUTTONS (Mobile + Desktop) ---------- */
 
 function makeButtonRun(buttonId){
   const btn = document.getElementById(buttonId);
 
-  btn.addEventListener("mouseover",()=>{
-      const x = Math.random() * (window.innerWidth - 100);
-      const y = Math.random() * (window.innerHeight - 50);
+  function moveButton(){
+      const padding = 20;
+      const x = Math.random() * (window.innerWidth - btn.offsetWidth - padding);
+      const y = Math.random() * (window.innerHeight - btn.offsetHeight - padding);
+
       btn.style.left = x + "px";
       btn.style.top = y + "px";
-  });
+  }
+
+  btn.addEventListener("mouseover", moveButton);  // Desktop
+  btn.addEventListener("touchstart", moveButton); // Mobile
 }
 
 makeButtonRun("noBtnPranii");
