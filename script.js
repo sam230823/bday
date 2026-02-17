@@ -33,8 +33,15 @@ function showCutePranii(){
 
 function showBhuviBirthday(){
   showPage("happyBhuviPage");
+
+  const video = document.getElementById("bhuviVideo");
+  video.play().catch(() => {
+      console.log("Autoplay blocked");
+  });
+
   document.getElementById("bhuviAudio").play();
 }
+
 
 function showCuteBhuvi(){
   document.getElementById("cuteMsgBhuvi").style.display = "block";
